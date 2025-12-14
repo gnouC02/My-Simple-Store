@@ -1,0 +1,12 @@
+{
+  "name": "my-simple-store",
+  "version": "1.0.0",
+  "description": "Du an thuc hanh Docker Toi Uu",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
