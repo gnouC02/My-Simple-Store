@@ -1,0 +1,22 @@
+name: CI/CD Docker Build
+
+# 1. Kích hoạt khi có code đẩy vào nhánh main
+on:
+  push:
+    branches: ["main"]
+
+jobs:
+  build-test:
+    runs-on: ubuntu-latest
+    steps:
+      # Bước 1: Lấy code về
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # Bước 2: Thử Build Docker (để xem code có lỗi không)
+      - name: Test Build Docker Image
+        run: docker build . --file Dockerfile --tag my-web-app:latest
+
+      # Bước 3: Thông báo
+      - name: Echo Success
+        run: echo "Code ngon lanh! Docker build thanh cong."
